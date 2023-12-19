@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+body {
+  font-family: IranSans;
+  background: #dcf9ff;
+  direction: rtl;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding: 15px;
+  background: #3c3c3c;
+  border-bottom: 5px solid #56bde3;
 }
 
-.App-link {
-  color: #61dafb;
+header h1 {
+  color: #eee;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: IranSans;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.faqs {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.faqs .faq {
+  margin: 15px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 3px 2px rgba(0, 134, 54, 0.256);
+}
+
+.faqs .faq .faq-question {
+  position: relative;
+  font-size: 16px;
+  padding-right: 16px;
+  transition: all 0.4s ease-in-out;
+}
+
+.faqs .faq.open .faq-question::after {
+
+  transform: rotate(45deg);
+  transition: all 0.4s ease-in-out;
+
+}
+
+.faqs .faq .faq-question::after {
+
+  content: "+";
+  position: absolute;
+  align-items: center;
+  align-content: center;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.4s ease-in-out;
+
+}
+
+.faqs .faq .faq-answer {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  font-size: 14px;
+}
+
+.faqs .faq.open .faq-question {
+  margin-bottom: 15px;
+}
+
+
+
+.faqs .faq.open .faq-answer {
+  max-height: 1000px;
+  opacity: 1;
 }
